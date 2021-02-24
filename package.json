@@ -1,0 +1,25 @@
+{
+  "name": "shopman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon backend/server.js",
+    "dev": "(cd frontend && nodemon start) & (cd ../ && nodemon start)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crisluda/shopman.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crisluda/shopman/issues"
+  },
+  "homepage": "https://github.com/crisluda/shopman#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
