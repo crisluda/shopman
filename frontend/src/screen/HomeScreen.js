@@ -1,6 +1,5 @@
 import React, {useState,useEffect} from 'react'
 import { Row,Col } from 'react-bootstrap';
-import products from '../products';
 import Product from '../components/Product';
 import axios from 'axios';
 // const baseUrl="http://127.0.0.1:5000"
