@@ -1,6 +1,10 @@
-const express = require('express');
-const products = require('./data/products');
-const { report } = require('process');
+import express from 'express';
+import products from './data/products.js';
+import dotenv from 'dotenv'
+import connectDB from './config/db.js';
+import colors from 'colors';
+dotenv.config()
+connectDB()
  const app=express()
 
 app.get("/",(req,res)=>{
@@ -19,7 +23,7 @@ app.get("/api/products/:id",(req,res)=>{
 
 
 
-
- app.listen(5000,()=>{
-     console.log(`server is runing on http://127.0.0.1:5000`);
+     const PORT=process.env.PORT || 5000
+ app.listen(PORT,()=>{
+     console.log(`server is runing on http://127.0.0.1:${PORT}`.blue.underline.bold);
  })
