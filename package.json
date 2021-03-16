@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon backend/server.js",
-    "dev": "(cd frontend && nodemon start) & (cd ../ && nodemon start)"
+    "start": "nodemon backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d"
   },
   "repository": {
     "type": "git",
@@ -20,6 +25,14 @@
   },
   "homepage": "https://github.com/crisluda/shopman#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "mongoose": "^5.11.18"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0"
   }
 }
