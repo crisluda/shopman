@@ -5,6 +5,8 @@ import Product from '../models/productModel.js';
 
 router.get("/",asyncHandler(async(req,res)=>{
     const product= await Product.find({})
+    // res.status(401)
+    // throw new Error("Not Autorized")
     res.json(product)
     }))
 router.get("/:id",asyncHandler(async(req,res)=>{
